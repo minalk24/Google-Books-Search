@@ -22,7 +22,7 @@ app.use(routes);
 //   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 // });
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks");
 
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
