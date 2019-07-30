@@ -2,7 +2,7 @@ import db from ("../models")
 
 module.exports = {
     findAllSaved: (req, res) => {
-        db.savedBooks
+        db.BooksSaved
         .find()
         .then(function(result){
             res.json(result)
@@ -11,7 +11,7 @@ module.exports = {
     },
 
     create: (req, res) => {
-        db.savedBooks
+        db.BooksSaved
         .create({
             title: req.body.title,
             link: req.body.link,
@@ -21,7 +21,7 @@ module.exports = {
         })
     },
     remove: (req, res) => {
-        db.savedBooks
+        db.BooksSaved
         .findById({ _id: req.params.id })
         .then(dbModel => dbModel.remove())
         .then(dbModel => res.json(dbModel))
